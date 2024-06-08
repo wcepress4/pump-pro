@@ -13,7 +13,7 @@ const ListUserComponent = () => {
 
                     <th> User First Name </th>
                     <th> User Last Name </th>
-                    <th> User Email Id </th>
+                    <th> User Email It </th>
                 </thead>
                 <tbody>
                     {
