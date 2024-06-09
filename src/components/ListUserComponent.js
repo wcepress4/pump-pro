@@ -1,8 +1,20 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import UserService from '../services/UserService'
+import { setRequestMeta } from 'next/dist/server/request-meta'
 
 const ListUserComponent = () => {
 
     const [users, setUsers] = useState([])
+
+    useEffect(() => {
+
+        UserService.getAllUsers().then((response) => {
+            setUsers(response.data)
+            console.log(response.data)
+        }).catch(error => {
+            console.log(error);
+        })
+    }, [])
 
     return (
         <div className = "container">
